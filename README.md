@@ -53,7 +53,7 @@ $$
 \frac{1}{B}\sum_{b = 1}^B \mathbb{1}\lbrace S < S^\ast_b\rbrace
 $$
 
-Intuitively, under the alternative, the p-value should be zero, due to the fact that T diverges.
+Intuitively, under the alternative, the p-value should be zero, due to the fact that S diverges.
 
 This test also works with panel data. In that case, the $S$ statistic is computed for each value of the time variable. Moreover, $V_{(j)}$ remains constant at the group level across the computation of the period-specific test statistics. Hence, the residual of group $g$ from a linear regression of $Y_{g,t}$ on $D_{g,t}$ and a constant are multiplied by $V_g$, regardless of $t$. Lastly, the individual test results can be summed into a joint test statistic. In this case, inference is performed using the distribution of the sum of the bootstrap statistics. Denote with $S_\ell$ the $\ell$-th period test statistic and with $S^\ast_{\ell,b}$ its $b$-th bootstrap estimate. In a dataset with $L$ periods, the p-value of the joint test is computed as follows:
 
