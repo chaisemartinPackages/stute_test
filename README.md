@@ -5,7 +5,7 @@ Linearity test from Stute (1997).
 ## Setup
 
 ```
-net install stute_test, from("https://raw.githubusercontent.com/chaisemartinPackages/stute_test/main/Stata/dist")
+net install stute_test, from("https://raw.githubusercontent.com/chaisemartinPackages/stute_test/main/Stata/dist") replace
 ```
 
 ## Syntax
