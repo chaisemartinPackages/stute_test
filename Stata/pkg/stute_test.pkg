@@ -1,0 +1,6 @@
+v 1.0.0
+d 'stute_test': Linearity test from Stute (1997)
+d 
+F stute_test.ado
+F stute_test.sthlp
+F stute_test.html
