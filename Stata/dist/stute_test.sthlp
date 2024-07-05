@@ -60,7 +60,7 @@ Section 3 of de Chaisemartin and D'Haultfoeuille (2024) for further details.
 {p_end}
 
 {p 4 4}
-This package allows two estimation settings:
+This package allows for two estimation settings:
 {p_end}
 
 {p 6 6}
@@ -156,7 +156,7 @@ specified in {cmd:panel} mode.
 {phang2}{stata set seed 0}{p_end}
 {phang2}{stata set obs 200}{p_end}
 {phang2}{stata gen G = mod(_n-1, 40) + 1}{p_end}
-{phang2}{stata bys G: gen T = _n}{p_end}
+{phang2}{stata gen T = floor((_n-1)/40) + 1}{p_end}
 {phang2}{stata gen D = uniform()}{p_end}
 {phang2}{stata gen Y = 1 + uniform()*D}{p_end}
 
