@@ -70,7 +70,7 @@ With **order(**0**)**, the command tests the hypothesis that the conditional mea
 
 + **brep(**#**)** This option allows to specify the number of wild bootstrap replications. The default is 500.
 
-+ **baseline(**#**)** This option allows to select one of the periods in the data as the baseline or omitted period. For instance, in a dataset with the support of **T** equal to (2001, 2002), `stute_test Y D G T, baseline(2001)` will test the hypothesis that the expectation of $Y_{2002} - Y_{2001}$ is a linear function of $D_{2002} - D_{2001}$. This option can only be specified in **panel** mode.
++ **baseline(**#**)** This option allows to select one of the periods in the data as the baseline or omitted period. For instance, in a dataset with the support of **T** equal to (2001, 2002, 2003), `stute_test Y D G T, baseline(2001)` will test the hypothesis that the expectations of $Y_{2002} - Y_{2001}$ and $Y_{2003} - Y_{2001}$ are linear functions of $D_{2002} - D_{2001}$ and $D_{2003} - D_{2001}$. This option can only be specified in **panel** mode.
 
 ## Example
 
