@@ -14,10 +14,16 @@ except:
 build = [
     "ado\\stute_test.ado",
     "help\\stute_test.sthlp",
-    "help\\stute_test.html",
+    "help\\stute_test.html"
+    ]
+git = [
     "pkg\\stata.toc",
     "pkg\\stute_test.pkg"
-    ]
+]
 for v in build:
-    shutil.copyfile(source_dir + "\\Stata\\" + v, destination_pkg + "\\" + v.split("\\")[1])
+    shutil.copyfile(source_dir + "\\Stata\\" + v, destination_pkg + "git\\" + v.split("\\")[1])
+    shutil.copyfile(source_dir + "\\Stata\\" + v, destination_pkg + "ssc\\" + v.split("\\")[1])
+for v in git:
+    shutil.copyfile(source_dir + "\\Stata\\" + v, destination_pkg + "git\\" + v.split("\\")[1])
+
 print("Version ", version, " packaged")

@@ -141,11 +141,13 @@ of wild bootstrap replications. The default is 500.
 This option allows to select one of the periods
 in the data as the baseline or omitted period.
 For instance, in a dataset with the support 
-of {cmd:T} equal to (2001, 2002),
+of {cmd:T} equal to (2001, 2002, 2003),
 {cmd:stute_test Y D G T, baseline(2001)} will 
-test the hypothesis that the expectation of 
-{cmd:Y}_2002 - {cmd:Y}_2001 is a linear function of
-{cmd:D}_2002 - {cmd:D}_2001. This option can only be
+test the hypotheses that the expectations of 
+{cmd:Y}_2002 - {cmd:Y}_2001 and {cmd:Y}_2003 
+- {cmd:Y}_2001 are linear functions of
+{cmd:D}_2002 - {cmd:D}_2001 and {cmd:D}_2003 
+- {cmd:D}_2001. This option can only be
 specified in {cmd:panel} mode.
 {p_end}
 
