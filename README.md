@@ -58,7 +58,7 @@ Intuitively, under the alternative, the p-value should be zero, due to the fact 
 This test also works with panel data. In that case, the $T$ statistic is computed for each value of the time variable. Moreover, $V_{(j)}$ remains constant at the group level across the computation of the period-specific test statistics. Hence, the residual of group $g$ from a linear regression of $Y_{g,t}$ on $D_{g,t}$ and a constant are multiplied by $V_g$, regardless of $t$. Lastly, the individual test results can be summed into a joint test statistic. In this case, inference is performed using the distribution of the sum of the bootstrap statistics. Denote with $T_\ell$ the period-$\ell$ test statistic and with $T^*_{\ell,b}$ its $b$-th bootstrap estimate. In a dataset with $L$ periods, the p-value of the joint test is computed as follows:
 
 $$
-\frac{1}{B}\sum_{b = 1}^B \mathbb{1}\left\{\sum_{\ell = 1}^L T_\ell < \sum_{\ell = 1}^L T^*_{\ell, b}\right\}.
+\frac{1}{B}\sum_{b = 1}^B \mathbb{1}\left\lbrace\sum_{\ell = 1}^L T_\ell < \sum_{\ell = 1}^L T^*_{\ell, b}\right\rbrace.
 $$
 
 ## Options
