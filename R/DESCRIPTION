@@ -1,0 +1,24 @@
+Package: StuteTest
+Title: Stute (1997) Linearity Test
+Version: 1.0.0
+Authors@R: 
+    c(person("Diego", "Ciccia", role = c("aut", "cre"), email = "diego.ciccia@sciencespo.fr"),
+	person("Felix", "Knau", role = "aut", email = "felix.knau@sciencespo.fr"),
+	person("Doulo", "Sow", role = "aut", email = "doulo.sow@sciencespo.fr"),
+    person("Clément", "de Chaisemartin", role = "aut", email = "clement.dechaisemartin@sciencespo.fr"),
+    person("Xavier", "D'Haultfoeuille", role = "aut", email = "xavier.dhaultfoeuille@ensae.fr"))
+Maintainer: Diego Ciccia <diego.ciccia@sciencespo.fr>
+Description: Test of linearity originally proposed by Stute (1997) <doi:>. 
+License: MIT + file LICENSE
+Imports: Rcpp (>= 1.0.12)
+LinkingTo: Rcpp, RcppArmadillo, matlib
+Author: Diego Ciccia [aut, cre],
+	Felix Knau [aut],
+	Doulo Sow [aut],
+  	Clément de Chaisemartin [aut],
+    Xavier D'Haultfoeuille [aut]
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
