@@ -168,7 +168,7 @@ mata:
         for (j = 1; j <= N-1; j++) {
             mat_temp = mat_temp, (J(j,1, j+1)\((j+1)..N)')
         }
-        mat_temp = (J(N,N,(N+1)/N) - mat_temp)/N
+        mat_temp = (J(N,N,N+1) - mat_temp)/N
 
         out_mat = J(1, 3, .)
         out_mat[1,2] = sum(mat_e_lin :* mat_temp)/N
