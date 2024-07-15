@@ -23,7 +23,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // stute_core
-NumericVector stute_core(const arma::mat& X, const arma::colvec& y, const arma::mat& F);
+NumericMatrix stute_core(const arma::mat& X, const arma::colvec& y, const arma::mat& F);
 RcppExport SEXP _StuteTest_stute_core(SEXP XSEXP, SEXP ySEXP, SEXP FSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

@@ -2,14 +2,14 @@
 % Please edit documentation in R/stute_test.R
 \name{stute_test}
 \alias{stute_test}
-\title{stute_test}
+\title{Linearity test from Stute (1997) <https:https://www.jstor.org/stable/2242560>}
 \usage{
 stute_test(
   df,
   Y,
   D,
-  G = NULL,
-  T = NULL,
+  group = NULL,
+  time = NULL,
   order = 1,
   seed = NULL,
   brep = 500,
@@ -17,24 +17,48 @@ stute_test(
 )
 }
 \arguments{
-\item{df}{df}
+\item{df}{(data.frame) A dataframe object.}
 
-\item{Y}{Y}
+\item{Y}{(char) Outcome variable.}
 
-\item{D}{D}
+\item{D}{(char) Treatment/independent variable.}
 
-\item{G}{G}
+\item{group}{(char) Group variable.}
 
-\item{T}{T}
+\item{time}{(char) Time variable.}
 
-\item{order}{order}
+\item{order}{(numeric) If this option is specified, the program tests whether the conditional expectation of \eqn{Y} given \eqn{D} is a \eqn{#}-degree polynomial in \eqn{D}. With \code{order = 0}, the command tests the hypothesis that the conditional mean of \eqn{Y} given \eqn{D} is constant.}
 
-\item{seed}{seed}
+\item{seed}{(numeric) This option allows to specify the seed for the wild bootstrap routine.}
 
-\item{brep}{brep}
+\item{brep}{(numeeric) This option allows to specify the number of wild bootstrap replications. The default is 500.}
 
-\item{baseline}{baseline}
+\item{baseline}{(numeric) This option allows to select one of the periods in the data as the baseline or omitted period. For instance, in a dataset with the support  of \code{time} equal to \eqn{(2001, 2002, 2003)}, \code{stute_test(..., baseline = 2001)} will test the hypotheses that the expectations of \eqn{Y_2002 - Y_2001} and \eqn{Y_2003 - Y_2001} are linear functions of \eqn{D_2002 - D_2001} and \eqn{D_2003 - D_2001}. This option can only be specified in \code{panel} mode.}
 }
 \description{
-stute_test
+Linearity test from Stute (1997) <https:https://www.jstor.org/stable/2242560>
+}
+\section{Overview}{
+
+This program implements the non-parametric test that the expectation of Y given D is linear proposed by Stute (1997). In the [companion vignette](), we sketch the intuition behind the test, as to motivate the use of the package and its options. Please refer to Stute (1997) and Section 3 of de Chaisemartin and D'Haultfoeuille (2024) for further details.
+
+This package allows for two estimation settings:
+
+1. \code{cross-section}. The test is run using the full dataset, treating each observation as an independent realization of \eqn{(Y,D)}. 
+
+2. \code{panel}. The test is run for all values of \code{time}, using a panel with \eqn{G} groups/units and \eqn{T} periods. In this mode, the test statistics will be computed among observations having the same value of \code{time}. The program will also return a joint test on the sum of the period-specific estimates. Due to the fact that inference on the joint statistic is performed via the bootstrap distribution of the  sum of the test statistics across time periods, this  mode requires a strongly balanced panel with no gaps.
+}
+
+\examples{
+set.seed(0)
+GG <- 10; TT <- 5;
+data <- as.data.frame(matrix(NA, nrow = GG * TT, ncol = 0))
+data$G <- (1:nrow(data) - 1) \%\% GG + 1
+data$T <- floor((1:nrow(data)-1)/GG) + 2000
+data <- data[order(data$G, data$T), ]
+data$D <- runif(n=nrow(data))
+data$Y <- runif(n=nrow(data))
+stute_test(df = data, Y = "Y", D = "D")
+stute_test(df = data, Y = "Y", D = "D", group = "G", time = "T")
+stute_test(df = data, Y = "Y", D = "D", group = "G", time = "T", baseline = 2001)
 }

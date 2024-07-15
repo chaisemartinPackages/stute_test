@@ -10,8 +10,9 @@ Authors@R:
 Maintainer: Diego Ciccia <diego.ciccia@sciencespo.fr>
 Description: Test of linearity originally proposed by Stute (1997) <doi:>. 
 License: MIT + file LICENSE
-Imports: Rcpp (>= 1.0.12)
-LinkingTo: Rcpp, RcppArmadillo, matlib
+VignetteBuilder: R.rsp
+Imports: Rcpp (>= 1.0.12), dplyr, plm, rnames, stats
+LinkingTo: Rcpp, RcppArmadillo
 Author: Diego Ciccia [aut, cre],
 	Felix Knau [aut],
 	Doulo Sow [aut],
@@ -19,6 +20,5 @@ Author: Diego Ciccia [aut, cre],
     Xavier D'Haultfoeuille [aut]
 Encoding: UTF-8
 RoxygenNote: 7.3.2
-Suggests: 
-    testthat (>= 3.0.0)
+Suggests: R.rsp, testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -45,18 +45,19 @@ double p_val(arma::rowvec& B, double J) {
 
 // [[Rcpp::depends(RcppArmadillo)]]
 // [[Rcpp::export]]
-NumericVector stute_core(const arma::mat& X, const arma::colvec& y, const arma::mat& F) {
-    NumericVector J = {0,0};
+NumericMatrix stute_core(const arma::mat& X, const arma::colvec& y, const arma::mat& F) {
+    NumericMatrix J(2,F.n_cols);
 
     arma::mat lin_res(X.n_rows, 1);
     lin_res.col(0) = y - X*solve(X, y);
-    J[0] = arma2vec(stute_stat(lin_res))[0];
+    J.row(0)[0] = arma2vec(stute_stat(lin_res))[0];
 
     int B = F.n_cols;
     arma::mat Y_st = vrep(y,B) - vrep(lin_res,B) + F % vrep(lin_res, B);
     arma::mat lin_res_st = Y_st - X * solve(X,Y_st);
     arma::rowvec bres = stute_stat(lin_res_st);
-    J[1] = p_val(bres, J[0]);
+    J.row(0)[1] = p_val(bres, J.row(0)[0]);
+    J.row(1) = arma2vec(bres);
 
     return(J);
 }
