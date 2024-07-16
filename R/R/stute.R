@@ -7,10 +7,10 @@
 #' @param V V
 #' @param t_tot t_tot
 #' @param t_boot t_boot
-#' @importFrom matlib Ginv 
+#' @param panel panel
 #' @noRd
 
-stute <- function(df,Y,D,order,brep,res_mat,V,t_tot,t_boot) {
+stute <- function(df,Y,D,order,brep,res_mat,V,t_tot,t_boot,panel=FALSE) {
     df <- df[order(df[[D]], df[[Y]]), ]
     N <- nrow(df)
     y <- as.vector(df[[Y]])
@@ -25,17 +25,13 @@ stute <- function(df,Y,D,order,brep,res_mat,V,t_tot,t_boot) {
     F <- F[order(F[,ncol(F)]), ][, 1:(ncol(F)-1)]
     F <- c2 + c3 * (F > c1)
 
-    out_mat <- matrix(NA, nrow = 1, ncol = 3)
-    out_mat[1, 2:3] <- stute_core(X,y,F)
-
-#    for (i in 1:brep) {
-#        y_st <- X %*% b + (matrix(c2,nrow=N,ncol=1) + c3*as.numeric(F[,i] > c1)) * e_lin
-#        b_st <- Ginv(t(X) %*% X) %*% (t(X) %*% y_st)
-#        e_lin_st <- y_st - X %*% b_st
-#        bres[i,1] <- stute_stat(e_lin_st)
-#    }
-#    out_mat[1,3] <- mean(as.numeric(bres > out_mat[1,2]))
-
-    print(out_mat)
+    res_list <- list()
+    stute_res <- stute_core(X,y,F)
+    res_list$res_mat <- rbind(res_mat, stute_res[1, 1:2])
+    if (panel) {
+        res_list$t_tot <- t_tot +  stute_res[1, 1]
+        res_list$t_boot <- t_boot + stute_res[2,]
+    }
+    return(res_list)
 }
 
