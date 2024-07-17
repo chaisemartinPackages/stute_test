@@ -43,7 +43,7 @@ predict res_sq, res
 gen m_res_sq = (sum(res_sq)/N)^2
 scatter m_res D, mc(white) mlc(black) || /// 
 scatter m_res_sq D, mc(red) mlc(black) || ///
-, ylabel(0) xticks(none) ytick(0) ytitle("m{subscript:G}(D){superscript:2}") xlabel(none) ///
+, ylabel(0) xticks(none) ytick(0) ytitle("c{subscript:G}(D){superscript:2}") xlabel(none) ///
 leg(order(1 "(a)" 2 "(b)") pos(6) col(2)) name(gr3, replace)
 
 gr combine gr1 gr2, name(gr12, replace) imargin(8 0 0 0)

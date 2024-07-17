@@ -1,0 +1,8 @@
+v 1.0.0
+d Clément de Chaisemartin, Diego Ciccia, Felix Knau, Doulo Sow, Xavier D'Haultfoeuille
+d chaisemartin.packages@gmail.com
+d https://github.com/chaisemartinPackages/stute_test
+
+d 'stute_test': Linearity test from Stute (1997)
+
+p stute_test

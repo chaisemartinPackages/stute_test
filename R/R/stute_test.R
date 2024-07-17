@@ -4,7 +4,7 @@
 #' @param D (char) Treatment/independent variable.
 #' @param group (char) Group variable.
 #' @param time (char) Time variable.
-#' @param order (numeric) If this option is specified, the program tests whether the conditional expectation of \eqn{Y} given \eqn{D} is a \eqn{#}-degree polynomial in \eqn{D}. With \code{order = 0}, the command tests the hypothesis that the conditional mean of \eqn{Y} given \eqn{D} is constant.
+#' @param order (numeric) If this option is specified with \code{order = k}, the program tests whether the conditional expectation of \eqn{Y} given \eqn{D} is a \eqn{k}-degree polynomial in \eqn{D}. With \code{order = 0}, the command tests the hypothesis that the conditional mean of \eqn{Y} given \eqn{D} is constant.
 #' @param seed (numeric) This option allows to specify the seed for the wild bootstrap routine.
 #' @param brep (numeeric) This option allows to specify the number of wild bootstrap replications. The default is 500.
 #' @param baseline (numeric) This option allows to select one of the periods in the data as the baseline or omitted period. For instance, in a dataset with the support  of \code{time} equal to \eqn{(2001, 2002, 2003)}, \code{stute_test(..., baseline = 2001)} will test the hypotheses that the expectations of \eqn{Y_2002 - Y_2001} and \eqn{Y_2003 - Y_2001} are linear functions of \eqn{D_2002 - D_2001} and \eqn{D_2003 - D_2001}. This option can only be specified in \code{panel} mode.

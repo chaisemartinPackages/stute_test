@@ -27,7 +27,7 @@ stute_test(
 
 \item{time}{(char) Time variable.}
 
-\item{order}{(numeric) If this option is specified, the program tests whether the conditional expectation of \eqn{Y} given \eqn{D} is a \eqn{#}-degree polynomial in \eqn{D}. With \code{order = 0}, the command tests the hypothesis that the conditional mean of \eqn{Y} given \eqn{D} is constant.}
+\item{order}{(numeric) If this option is specified with \code{order = k}, the program tests whether the conditional expectation of \eqn{Y} given \eqn{D} is a \eqn{k}-degree polynomial in \eqn{D}. With \code{order = 0}, the command tests the hypothesis that the conditional mean of \eqn{Y} given \eqn{D} is constant.}
 
 \item{seed}{(numeric) This option allows to specify the seed for the wild bootstrap routine.}
 

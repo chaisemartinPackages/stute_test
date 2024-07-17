@@ -165,7 +165,7 @@ mata:
         out_mat = J(1, 3, .)
         out_mat[1,2] = stute_core(e_lin)[1,1]
 
-        c1 = (sqrt(5) + 1)/(2*sqrt(5))
+        c1 = (sqrt(5) + 1)/(2 + sqrt(5))
         c2 = (1 - sqrt(5))/2
         c3 = sqrt(5)
         F = V, D
