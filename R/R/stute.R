@@ -18,7 +18,7 @@ stute <- function(df,Y,D,order,brep,res_mat,V,t_tot,t_boot,panel=FALSE) {
     for (j in 0:order) {
         X[1:N,j+1] <- df[[D]]^j
     }
-    c1 <- (sqrt(5) + 1) / (2 + sqrt(5))
+    c1 <- (sqrt(5) + 1) / (2 * sqrt(5))
     c2 <- (1 - sqrt(5)) / 2
     c3 <- sqrt(5)
     F <- cbind(V,df[[D]])
