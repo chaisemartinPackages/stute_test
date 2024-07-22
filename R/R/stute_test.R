@@ -36,6 +36,7 @@
 #' @importFrom plm pdata.frame is.pbalanced
 #' @importFrom stats runif
 #' @import dplyr
+#' @returns A list with stute_test custom class that includes point estimates and p-values from the test. If the test is performed in panel mode with more than 1 periods, the returned object also includes the point estimate and p-value from a joint test on the sum of the individual test statistics.
 #' @export
 
 stute_test <- function(
