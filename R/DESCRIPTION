@@ -1,6 +1,6 @@
 Package: StuteTest
 Title: Stute (1997) Linearity Test
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     c(person("Diego", "Ciccia", role = c("aut", "cre"), email = "diego.ciccia@kellogg.northwestern.edu"),
 	person("Felix", "Knau", role = "aut", email = "felix.knau@sciencespo.fr"),
@@ -8,7 +8,7 @@ Authors@R:
     person("Clément", "de Chaisemartin", role = "aut", email = "clement.dechaisemartin@sciencespo.fr"),
     person("Xavier", "D'Haultfoeuille", role = "aut", email = "xavier.dhaultfoeuille@ensae.fr"))
 Maintainer: Diego Ciccia <diego.ciccia@kellogg.northwestern.edu>
-Description: Test of linearity originally proposed by Stute (1997) <https://www.jstor.org/stable/2242560>. 
+Description: Non-parametric test, originally proposed by Stute (1997) <https://www.jstor.org/stable/2242560>, that the expectation of a dependent variable Y given an independent variable D is linear in D.
 License: MIT + file LICENSE
 VignetteBuilder: R.rsp
 Imports: Rcpp (>= 1.0.12), dplyr, plm, rnames, stats

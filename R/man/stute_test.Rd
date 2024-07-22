@@ -35,6 +35,9 @@ stute_test(
 
 \item{baseline}{(numeric) This option allows to select one of the periods in the data as the baseline or omitted period. For instance, in a dataset with the support  of \code{time} equal to \eqn{(2001, 2002, 2003)}, \code{stute_test(..., baseline = 2001)} will test the hypotheses that the expectations of \eqn{Y_2002 - Y_2001} and \eqn{Y_2003 - Y_2001} are linear functions of \eqn{D_2002 - D_2001} and \eqn{D_2003 - D_2001}. This option can only be specified in \code{panel} mode.}
 }
+\value{
+A list with stute_test custom class that includes point estimates and p-values from the test. If the test is performed in panel mode with more than 1 periods, the returned object also includes the point estimate and p-value from a joint test on the sum of the individual test statistics.
+}
 \description{
 Linearity test from Stute (1997)
 }

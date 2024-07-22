@@ -1,3 +1,4 @@
+#' Internal function of stute_test
 #' @param df df
 #' @param Y Y
 #' @param D D
@@ -8,6 +9,7 @@
 #' @param t_tot t_tot
 #' @param t_boot t_boot
 #' @param panel panel
+#' @returns A list with individual and bootstrap test statistics.
 #' @noRd
 
 stute <- function(df,Y,D,order,brep,res_mat,V,t_tot,t_boot,panel=FALSE) {
